@@ -116,11 +116,13 @@ DELETE /foods/{food}, mapped to the destroy() method.
 
 `Route::apiResource('foods', 'FoodController');`
 
+- To open the server by typing command in your terminal: `php artisan serve`.
+
 # Implementing the CRUD Operations
 - Let's now implement the controller methods alongside the views.
 
 - Re-open the app/Http/Controllers/FoodController.php file and start by importing the Food model:
-*** Don't forget to import App\Food in Controller ***
+***Don't forget to import App\Food in Controller***
 
 `use App\Food;`
 
@@ -136,34 +138,20 @@ public function index()
 ```
 - The index() function makes use of the view() method to return the index.blade.php template which needs to be present in the resources/views folder.
 
-- Before creating the `index.blade.php` template we need to create a *** base template *** that will be extended by the create template and all the other templates.
+- Before creating the `index.blade.php` template we need to create a ***base template*** that will be extended by the create template and all the other templates.
 
 - In the resources/views folder, create a base.blade.php file:
 
 `cd resources/views`
 `touch base.blade.php`
 
-- Open the resources/views/base.blade.php file and add the following blade template:
+- Open the resources/views/base.blade.php file and add the following blade template: [base.blade.php](https://github.com/priyankamk/php-food-app/blob/master/resources/views/base.blade.php).
 
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Food App with Php and Mysql database</title>
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
-</head>
-<body>
-  <div class="container">
-    @yield('main')
-  </div>
-  <script src="{{ asset('js/app.js') }}" type="text/js"></script>
-</body>
-</html>
-```
 - Now, let's create the index.blade.php template. First, create a foods folder in the views folder: `mkdir foods`.
 - Next, create the template `cd foods` `touch index.blade.php`
 - Open the resources/views/foods/index.blade.php file and add the following code: [index.blade.php](https://github.com/priyankamk/php-food-app/blob/master/resources/views/Foods/index.blade.php).
+
+
 
 
 
